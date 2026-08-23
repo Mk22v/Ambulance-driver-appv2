@@ -43,4 +43,4 @@ This app is part of an ongoing college capstone project (also being written up a
 
 ## License
 
-_Add a license (e.g. MIT) if you intend others to reuse this code — none is currently specified._
+Licensed under the [MIT License](LICENSE).
