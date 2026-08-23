@@ -1,0 +1,72 @@
+# Built application files
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+release/
+
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Local configuration
+local.properties
+
+# MQTT broker credentials (never commit)
+mqtt-secrets.properties
+
+# Android Studio / IntelliJ
+*.iml
+.idea/
+.idea/caches
+.idea/libraries
+.idea/modules.xml
+.idea/workspace.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/deploymentTargetSelector.xml
+.idea/misc.xml
+.idea/compiler.xml
+.idea/gradle.xml
+.idea/migrations.xml
+.idea/vcs.xml
+.idea/runConfigurations.xml
+.idea/AndroidProjectSystem.xml
+.idea/deviceManager.xml
+captures/
+.externalNativeBuild/
+.cxx/
+*.hprof
+*.log
+
+# NDK
+obj/
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Kotlin
+.kotlin/

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ambulance Driver</string>
+    <string name="login_title">Login</string>
+    <string name="login_subtitle">Sign in to start sharing this ambulance\'s location.</string>
+    <string name="ambulance_id">Ambulance ID</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="fill_login">Enter ambulance ID, username, and password.</string>
+
+    <string name="trip_title">Trip setup</string>
+    <string name="severity_label">Medical severity</string>
+    <string name="severity_low">Low</string>
+    <string name="severity_medium">Medium</string>
+    <string name="severity_high">High</string>
+    <string name="severity_critical">Critical</string>
+    <string name="destination_label">Destination hospital</string>
+    <string name="destination_hint">Select hospital</string>
+    <string name="hospital_coords">Location: %1$.4f, %2$.4f</string>
+    <string name="start_journey">Start Journey</string>
+    <string name="select_severity">Select a medical severity.</string>
+    <string name="select_hospital">Select a destination hospital.</string>
+
+    <string name="journey_title">Journey</string>
+    <string name="journey_banner">Journey in progress — location is being shared</string>
+    <string name="end_journey">End Journey</string>
+    <string name="end_journey_title">End journey?</string>
+    <string name="end_journey_confirm">End journey and go back?</string>
+    <string name="mqtt_connected">MQTT: Connected</string>
+    <string name="mqtt_disconnected">MQTT: Disconnected</string>
+    <string name="mqtt_reconnecting">MQTT: Reconnecting</string>
+    <string name="waiting_gps">Waiting for GPS…</string>
+    <string name="gps_coords">Lat %1$.6f\nLong %2$.6f</string>
+    <string name="last_updated">Last updated: %1$s</string>
+    <string name="queued_count">Queued updates: %1$d</string>
+
+    <string name="notif_channel">Journey tracking</string>
+    <string name="notif_title">Ambulance journey active</string>
+    <string name="notif_text">Publishing location every 3–4 seconds</string>
+
+    <string name="perm_required_title">Permission required</string>
+    <string name="perm_location_required">The journey cannot start without location permission. Tap Retry to request it again.</string>
+    <string name="perm_fine_denied">Precise location is required to share GPS during a journey. The journey cannot start without it.</string>
+    <string name="perm_coarse_denied">Location permission is required to share GPS during a journey. The journey cannot start without it.</string>
+    <string name="perm_notifications_denied">Notification permission is required for the foreground location service. The journey cannot start without it.</string>
+    <string name="perm_bg_denied">“Allow all the time” location access is required so tracking continues when the app is in the background. The journey cannot start without it.</string>
+    <string name="perm_bg_rationale">Next, Android will ask for background location. Choose “Allow all the time” so GPS sharing continues when the app is not on screen. A persistent notification stays visible while a journey is active.</string>
+    <string name="retry">Retry</string>
+    <string name="continue_label">Continue</string>
+</resources>

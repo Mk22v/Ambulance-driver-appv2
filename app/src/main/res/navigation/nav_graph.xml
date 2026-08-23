@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.ambulance.driver.ui.LoginFragment"
+        android:label="@string/login_title"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_trip"
+            app:destination="@id/tripSetupFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/tripSetupFragment"
+        android:name="com.ambulance.driver.ui.TripSetupFragment"
+        android:label="@string/trip_title"
+        tools:layout="@layout/fragment_trip_setup">
+        <action
+            android:id="@+id/action_trip_to_journey"
+            app:destination="@id/journeyFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/journeyFragment"
+        android:name="com.ambulance.driver.ui.JourneyFragment"
+        android:label="@string/journey_title"
+        tools:layout="@layout/fragment_journey" />
+</navigation>
