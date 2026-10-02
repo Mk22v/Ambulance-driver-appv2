@@ -58,6 +58,12 @@ class JourneyFragment : Fragment() {
                     JourneyState.lng.collect { updateLocationText() }
                 }
                 launch {
+                    JourneyState.speedMps.collect { updateSpeedText() }
+                }
+                launch {
+                    JourneyState.accuracyMeters.collect { updateAccuracyText() }
+                }
+                launch {
                     JourneyState.lastUpdatedMillis.collect { millis ->
                         binding.lastUpdated.text = if (millis == null) {
                             getString(R.string.waiting_gps)
@@ -101,6 +107,24 @@ class JourneyFragment : Fragment() {
             getString(R.string.gps_coords, lat, lng)
         } else {
             getString(R.string.waiting_gps)
+        }
+    }
+
+    private fun updateSpeedText() {
+        val speedMps = JourneyState.speedMps.value
+        binding.speedValue.text = if (speedMps == null) {
+            getString(R.string.speed_unavailable)
+        } else {
+            getString(R.string.speed_kmh, speedMps * 3.6)
+        }
+    }
+
+    private fun updateAccuracyText() {
+        val accuracy = JourneyState.accuracyMeters.value
+        binding.accuracyValue.text = if (accuracy == null) {
+            getString(R.string.accuracy_unavailable)
+        } else {
+            getString(R.string.accuracy_meters, accuracy)
         }
     }
 

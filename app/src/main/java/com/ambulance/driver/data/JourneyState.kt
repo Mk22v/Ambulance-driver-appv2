@@ -30,6 +30,12 @@ object JourneyState {
     private val _lastUpdatedMillis = MutableStateFlow<Long?>(null)
     val lastUpdatedMillis: StateFlow<Long?> = _lastUpdatedMillis.asStateFlow()
 
+    private val _speedMps = MutableStateFlow<Double?>(null)
+    val speedMps: StateFlow<Double?> = _speedMps.asStateFlow()
+
+    private val _accuracyMeters = MutableStateFlow<Double?>(null)
+    val accuracyMeters: StateFlow<Double?> = _accuracyMeters.asStateFlow()
+
     private val _mqttStatus = MutableStateFlow(MqttConnectionStatus.DISCONNECTED)
     val mqttStatus: StateFlow<MqttConnectionStatus> = _mqttStatus.asStateFlow()
 
@@ -42,14 +48,24 @@ object JourneyState {
         _lat.value = null
         _lng.value = null
         _lastUpdatedMillis.value = null
+        _speedMps.value = null
+        _accuracyMeters.value = null
         _mqttStatus.value = MqttConnectionStatus.CONNECTING
         _active.value = true
     }
 
-    fun updateLocation(lat: Double, lng: Double, timestamp: Long = System.currentTimeMillis()) {
+    fun updateLocation(
+        lat: Double,
+        lng: Double,
+        timestamp: Long = System.currentTimeMillis(),
+        speedMps: Double? = null,
+        accuracyMeters: Double? = null
+    ) {
         _lat.value = lat
         _lng.value = lng
         _lastUpdatedMillis.value = timestamp
+        _speedMps.value = speedMps
+        _accuracyMeters.value = accuracyMeters
     }
 
     fun setMqttStatus(status: MqttConnectionStatus) {
@@ -65,6 +81,8 @@ object JourneyState {
         _lat.value = null
         _lng.value = null
         _lastUpdatedMillis.value = null
+        _speedMps.value = null
+        _accuracyMeters.value = null
         _mqttStatus.value = MqttConnectionStatus.DISCONNECTED
     }
 }

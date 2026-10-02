@@ -110,13 +110,18 @@ class LocationForegroundService : LifecycleService() {
 
     private fun onLocation(location: Location) {
         val timestamp = System.currentTimeMillis()
-        JourneyState.updateLocation(location.latitude, location.longitude, timestamp)
-        val payload = LocationPayload(
+        val payload = LocationPayload.from(
+            location = location,
             ambulanceId = prefs.ambulanceId,
-            lat = location.latitude,
-            longitude = location.longitude,
             severity = severity,
             timestamp = timestamp
+        )
+        JourneyState.updateLocation(
+            lat = payload.lat,
+            lng = payload.longitude,
+            timestamp = payload.timestamp,
+            speedMps = payload.speed,
+            accuracyMeters = payload.accuracy
         )
         mqtt.publish(payload)
     }

@@ -59,7 +59,7 @@ class MqttPublisher(
             if (!sent) {
                 queue.enqueue(topic, json)
                 JourneyState.setQueuedCount(queue.size())
-                Log.w(PUBLISH_TAG, "Publish failed or offline; queued topic=$topic queueSize=${queue.size()}")
+                Log.w(PUBLISH_TAG, "Publish failed or offline; queued topic=$topic payload=$json queueSize=${queue.size()}")
             }
         }
     }
@@ -259,7 +259,7 @@ class MqttPublisher(
                 Log.i(PUBLISH_TAG, "Publish succeeded topic=$topic")
                 true
             } catch (e: Exception) {
-                Log.e(PUBLISH_TAG, "Publish failed topic=$topic", e)
+                Log.e(PUBLISH_TAG, "Publish failed topic=$topic payload=$json", e)
                 false
             }
         }
@@ -278,12 +278,12 @@ class MqttPublisher(
             while (iterator.hasNext()) {
                 if (!connected.get()) break
                 val item = iterator.next()
-                Log.i(PUBLISH_TAG, "Flush publish attempt topic=${item.topic} qos=1")
+                Log.i(PUBLISH_TAG, "Flush publish attempt topic=${item.topic} qos=1 payload=${item.payload}")
                 val ok = tryPublish(item.topic, item.payload)
                 if (ok) {
                     iterator.remove()
                 } else {
-                    Log.e(PUBLISH_TAG, "Flush publish failed topic=${item.topic}; stopping flush")
+                    Log.e(PUBLISH_TAG, "Flush publish failed topic=${item.topic} payload=${item.payload}; stopping flush")
                     break
                 }
             }

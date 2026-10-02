@@ -32,6 +32,10 @@
     <string name="mqtt_reconnecting">MQTT: Reconnecting</string>
     <string name="waiting_gps">Waiting for GPS…</string>
     <string name="gps_coords">Lat %1$.6f\nLong %2$.6f</string>
+    <string name="speed_kmh">Speed: %1$.1f km/h</string>
+    <string name="speed_unavailable">Speed: —</string>
+    <string name="accuracy_meters">GPS accuracy: %1$.1f m</string>
+    <string name="accuracy_unavailable">GPS accuracy: —</string>
     <string name="last_updated">Last updated: %1$s</string>
     <string name="queued_count">Queued updates: %1$d</string>
 
